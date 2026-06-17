@@ -79,7 +79,7 @@ function ServiceDetail() {
               <div className="card-elevated rounded-2xl p-6">
                 <span className="text-xs font-semibold uppercase tracking-widest text-gold">What's included</span>
                 <ul className="mt-4 space-y-3">
-                  {service.deliverables.map((d) => (
+                  {service.deliverables.map((d: string) => (
                     <li key={d} className="flex items-start gap-2.5 text-sm">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                       <span>{d}</span>
@@ -99,7 +99,7 @@ function ServiceDetail() {
           <Sparkles className="h-5 w-5 text-gold" />
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {service.highlights.map((h, i) => (
+          {service.highlights.map((h: string, i: number) => (
             <div key={h} className="card-elevated rounded-2xl p-6">
               <div className="font-display text-sm font-semibold tracking-widest text-gold">0{i + 1}</div>
               <h3 className="mt-3 text-lg font-semibold">{h}</h3>
@@ -117,7 +117,7 @@ function ServiceDetail() {
           <h2 className="text-3xl font-semibold md:text-4xl">Our process</h2>
           <p className="mt-3 max-w-xl text-muted-foreground">A predictable rhythm — so you always know what's next.</p>
           <ol className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {service.process.map((p, i) => (
+            {service.process.map((p: { step: string; detail: string }, i: number) => (
               <li key={p.step} className="relative card-elevated rounded-2xl p-6">
                 <span className="font-display text-3xl font-semibold text-gold-gradient">0{i + 1}</span>
                 <h3 className="mt-3 text-lg font-semibold">{p.step}</h3>
