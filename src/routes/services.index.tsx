@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Search, Code2, TrendingUp, Palette, Smartphone, Megaphone, Sparkles } from "lucide-react";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from "motion/react";
 import type { MouseEvent } from "react";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Motion";
