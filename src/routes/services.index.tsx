@@ -46,7 +46,7 @@ function ServicesIndex() {
         <StaggerGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <StaggerItem key={s.slug}>
-              <FlipCard s={s} />
+              <ServiceFlipCard s={s} />
             </StaggerItem>
           ))}
         </StaggerGroup>
