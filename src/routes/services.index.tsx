@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Search, Code2, TrendingUp, Palette, Smartphone, Megaphone } from "lucide-react";
-import { motion } from "motion/react";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Motion";
 import { ParticleField } from "@/components/site/ParticleField";
