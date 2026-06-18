@@ -17,6 +17,7 @@ function FlipCard({ s }: { s: Service }) {
   const ry = useSpring(useTransform(mx, [-0.5, 0.5], [-8, 8]), { stiffness: 200, damping: 18 });
   const gx = useTransform(mx, [-0.5, 0.5], ["0%", "100%"]);
   const gy = useTransform(my, [-0.5, 0.5], ["0%", "100%"]);
+  const spotlight = useMotionTemplate`radial-gradient(420px circle at ${gx} ${gy}, oklch(0.62 0.22 268 / 0.28), transparent 55%)`;
 
   const onMove = (e: MouseEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect();
