@@ -45,12 +45,7 @@ function FlipCard({ s }: { s: Service }) {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            style={{
-              background: useTransform(
-                [gx, gy] as never,
-                ([x, y]: string[]) => `radial-gradient(420px circle at ${x} ${y}, oklch(0.62 0.22 268 / 0.28), transparent 55%)`
-              ) as unknown as string,
-            }}
+            style={{ background: spotlight }}
           />
           {/* shine sweep */}
           <div className="pointer-events-none absolute -inset-y-10 -left-1/2 w-1/2 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-all duration-700 group-hover:left-[110%] group-hover:opacity-100" />
