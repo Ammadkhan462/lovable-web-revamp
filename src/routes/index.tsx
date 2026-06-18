@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Motion";
 import { ParticleField } from "@/components/site/ParticleField";
 import { services } from "@/data/services";
+import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
 import heroImg from "@/assets/hero.jpg";
 
 const iconMap = { Search, Code2, TrendingUp, Palette, Smartphone, Megaphone } as const;
@@ -166,37 +167,14 @@ function Home() {
           </Reveal>
         </div>
 
-        <StaggerGroup className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => {
-            const Icon = iconMap[s.icon as keyof typeof iconMap];
-            return (
-              <StaggerItem key={s.slug}>
-                <motion.div whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 240, damping: 22 }}>
-                  <Link
-                    to="/services/$slug"
-                    params={{ slug: s.slug }}
-                    className="group card-elevated relative block overflow-hidden rounded-2xl p-7 transition hover:border-primary/60"
-                  >
-                    <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/15 opacity-0 blur-3xl transition group-hover:opacity-100" />
-                    <div className="relative flex items-center justify-between">
-                      <span className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-[var(--gradient-primary)] group-hover:text-primary-foreground">
-                        <Icon className="h-6 w-6" />
-                      </span>
-                      <ArrowUpRight className="h-5 w-5 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold" />
-                    </div>
-                    <h3 className="relative mt-6 text-xl font-semibold">{s.title}</h3>
-                    <p className="relative mt-2 text-sm text-muted-foreground">{s.tagline}</p>
-                    <ul className="relative mt-5 flex flex-wrap gap-1.5">
-                      {s.highlights.slice(0, 3).map((h: string) => (
-                        <li key={h} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] text-muted-foreground">{h}</li>
-                      ))}
-                    </ul>
-                  </Link>
-                </motion.div>
-              </StaggerItem>
-            );
-          })}
+        <StaggerGroup className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s) => (
+            <StaggerItem key={s.slug}>
+              <ServiceFlipCard s={s} />
+            </StaggerItem>
+          ))}
         </StaggerGroup>
+
       </section>
 
       {/* PROCESS */}
