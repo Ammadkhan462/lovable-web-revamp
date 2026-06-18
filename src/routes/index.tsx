@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Motion";
 import { ParticleField } from "@/components/site/ParticleField";
 import { services } from "@/data/services";
+import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
 import heroImg from "@/assets/hero.jpg";
 
 const iconMap = { Search, Code2, TrendingUp, Palette, Smartphone, Megaphone } as const;
