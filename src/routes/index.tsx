@@ -8,6 +8,8 @@ import { services } from "@/data/services";
 import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
 import { CountUp } from "@/components/site/CountUp";
 import heroImg from "@/assets/hero.jpg";
+import marketing1 from "@/assets/marketing-1.jpg";
+import marketing2 from "@/assets/marketing-2.jpg";
 
 const iconMap = { Search, Code2, TrendingUp, Palette, Smartphone, Megaphone } as const;
 
@@ -30,22 +32,26 @@ function Home() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 hero-bg" />
-        <ParticleField />
-        <div className="absolute inset-0 opacity-[0.35] grid-noise" />
+        {/* Full landscape hero image */}
         <motion.img
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.18, scale: 1 }}
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           src={heroImg}
-          alt=""
-          width={1600}
-          height={1100}
-          className="pointer-events-none absolute right-[-10%] top-[-10%] hidden h-[120%] w-[70%] object-cover mix-blend-multiply lg:block"
+          alt="TechRankers creative team collaborating in studio"
+          width={1920}
+          height={1080}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
+        {/* Tint + gradient overlays for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-transparent" />
+        <ParticleField />
+        <div className="absolute inset-0 opacity-[0.18] grid-noise" />
         {/* drifting blobs */}
-        <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-blob" />
-        <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-full bg-accent/25 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
+        <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-accent/30 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
+
 
         <div className="container-x relative grid gap-12 py-24 md:py-32 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -73,12 +79,12 @@ function Home() {
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.55 }} className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/contact" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:opacity-95 animate-pulse-glow">
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                Start a project <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              <Link to="/contact" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] ring-2 ring-transparent transition-all duration-300 hover:scale-[1.04] hover:bg-accent hover:text-accent-foreground hover:ring-accent/40 hover:shadow-[0_0_0_6px_oklch(0.66_0.19_215/0.18),var(--shadow-glow)]">
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                Start a project <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <Link to="/work" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-surface-elevated">
-                See our work <ArrowUpRight className="h-4 w-4" />
+              <Link to="/work" className="group inline-flex items-center gap-2 rounded-full border-2 border-primary bg-background px-7 py-3.5 text-sm font-semibold text-primary backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground">
+                See our work <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             </motion.div>
 
@@ -177,6 +183,34 @@ function Home() {
         </StaggerGroup>
 
       </section>
+
+      {/* RESULTS BAND with marketing imagery */}
+      <section className="container-x pb-24">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+          <Reveal>
+            <motion.div whileHover={{ scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }} className="group relative h-full min-h-[360px] overflow-hidden rounded-3xl border border-border">
+              <img src={marketing1} alt="Marketing analytics dashboard" loading="lazy" width={1280} height={900} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-primary-foreground">
+                <span className="text-xs font-semibold uppercase tracking-widest text-accent">Data-driven</span>
+                <h3 className="mt-2 font-display text-3xl font-semibold">Dashboards that turn signal into strategy.</h3>
+              </div>
+            </motion.div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <motion.div whileHover={{ scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }} className="group relative h-full min-h-[360px] overflow-hidden rounded-3xl border border-border">
+              <img src={marketing2} alt="Creative team strategy session" loading="lazy" width={1280} height={900} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-primary-foreground">
+                <span className="text-xs font-semibold uppercase tracking-widest text-accent">Senior team</span>
+                <h3 className="mt-2 font-display text-3xl font-semibold">Strategists, designers, and engineers — together.</h3>
+              </div>
+            </motion.div>
+          </Reveal>
+        </div>
+      </section>
+
+
 
       {/* PROCESS */}
       <section className="relative overflow-hidden border-y border-border bg-surface/40">
