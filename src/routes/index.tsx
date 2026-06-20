@@ -6,6 +6,7 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Motion";
 import { ParticleField } from "@/components/site/ParticleField";
 import { services } from "@/data/services";
 import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
+import { CountUp } from "@/components/site/CountUp";
 import heroImg from "@/assets/hero.jpg";
 
 const iconMap = { Search, Code2, TrendingUp, Palette, Smartphone, Megaphone } as const;
@@ -34,13 +35,13 @@ function Home() {
         <div className="absolute inset-0 opacity-[0.35] grid-noise" />
         <motion.img
           initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.5, scale: 1 }}
+          animate={{ opacity: 0.18, scale: 1 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           src={heroImg}
           alt=""
           width={1600}
           height={1100}
-          className="pointer-events-none absolute right-[-10%] top-[-10%] hidden h-[120%] w-[70%] object-cover mix-blend-screen lg:block"
+          className="pointer-events-none absolute right-[-10%] top-[-10%] hidden h-[120%] w-[70%] object-cover mix-blend-multiply lg:block"
         />
         {/* drifting blobs */}
         <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-blob" />
@@ -108,14 +109,14 @@ function Home() {
               </div>
               <StaggerGroup className="mt-6 grid grid-cols-2 gap-4">
                 {[
-                  { k: "+312%", v: "organic traffic" },
-                  { k: "2.4×", v: "conversion lift" },
-                  { k: "<1.2s", v: "load time (LCP)" },
-                  { k: "98", v: "Lighthouse score" },
+                  { node: <><CountUp value={312} prefix="+" suffix="%" /></>, v: "organic traffic" },
+                  { node: <><CountUp value={2.4} decimals={1} suffix="×" /></>, v: "conversion lift" },
+                  { node: <><span className="text-muted-foreground">&lt;</span><CountUp value={1.2} decimals={1} suffix="s" /></>, v: "load time (LCP)" },
+                  { node: <CountUp value={98} />, v: "Lighthouse score" },
                 ].map((m) => (
                   <StaggerItem key={m.v}>
                     <div className="rounded-xl border border-border bg-surface p-4">
-                      <div className="font-display text-2xl font-semibold text-foreground">{m.k}</div>
+                      <div className="font-display text-2xl font-semibold text-foreground">{m.node}</div>
                       <div className="mt-1 text-xs text-muted-foreground">{m.v}</div>
                     </div>
                   </StaggerItem>
