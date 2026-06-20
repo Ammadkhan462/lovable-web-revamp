@@ -8,6 +8,8 @@ import { services } from "@/data/services";
 import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
 import { CountUp } from "@/components/site/CountUp";
 import heroImg from "@/assets/hero.jpg";
+import marketing1 from "@/assets/marketing-1.jpg";
+import marketing2 from "@/assets/marketing-2.jpg";
 
 const iconMap = { Search, Code2, TrendingUp, Palette, Smartphone, Megaphone } as const;
 
