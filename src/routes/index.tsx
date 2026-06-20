@@ -77,12 +77,12 @@ function Home() {
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.55 }} className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/contact" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:opacity-95 animate-pulse-glow">
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                Start a project <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              <Link to="/contact" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] ring-2 ring-transparent transition-all duration-300 hover:scale-[1.04] hover:bg-accent hover:text-accent-foreground hover:ring-accent/40 hover:shadow-[0_0_0_6px_oklch(0.66_0.19_215/0.18),var(--shadow-glow)]">
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                Start a project <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <Link to="/work" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-surface-elevated">
-                See our work <ArrowUpRight className="h-4 w-4" />
+              <Link to="/work" className="group inline-flex items-center gap-2 rounded-full border-2 border-primary bg-background px-7 py-3.5 text-sm font-semibold text-primary backdrop-blur transition-all duration-300 hover:bg-primary hover:text-primary-foreground">
+                See our work <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             </motion.div>
 
