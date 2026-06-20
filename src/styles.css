@@ -40,45 +40,50 @@
 :root {
   --radius: 0.75rem;
 
-  /* Midnight Indigo + Gold */
-  --background: oklch(0.16 0.04 270);
-  --foreground: oklch(0.97 0.01 260);
-  --surface: oklch(0.20 0.045 268);
-  --surface-elevated: oklch(0.24 0.05 268);
+  /* Bright minimal: white bg, near-black ink, cyan accent */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.16 0.01 240);
+  --surface: oklch(0.985 0.005 220);
+  --surface-elevated: oklch(0.97 0.008 220);
 
-  --card: oklch(0.20 0.045 268);
-  --card-foreground: oklch(0.97 0.01 260);
-  --popover: oklch(0.18 0.045 268);
-  --popover-foreground: oklch(0.97 0.01 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.01 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.01 240);
 
-  --primary: oklch(0.62 0.22 268);        /* electric indigo */
+  /* Primary = ink black (buttons) */
+  --primary: oklch(0.16 0.01 240);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.28 0.05 268);
-  --secondary-foreground: oklch(0.97 0.01 260);
+  --secondary: oklch(0.95 0.01 220);
+  --secondary-foreground: oklch(0.16 0.01 240);
 
-  --muted: oklch(0.24 0.04 268);
-  --muted-foreground: oklch(0.72 0.025 260);
-  --accent: oklch(0.55 0.22 280);
-  --accent-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.96 0.005 220);
+  --muted-foreground: oklch(0.45 0.015 240);
 
-  --gold: oklch(0.82 0.13 85);
-  --gold-foreground: oklch(0.18 0.04 268);
+  /* Accent = cyan */
+  --accent: oklch(0.78 0.13 200);
+  --accent-foreground: oklch(0.16 0.01 240);
+
+  /* Repurpose "gold" → cyan so existing utility classes light up cyan */
+  --gold: oklch(0.74 0.14 200);
+  --gold-foreground: oklch(0.16 0.01 240);
 
   --destructive: oklch(0.62 0.24 27);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.32 0.05 268 / 0.55);
-  --input: oklch(0.32 0.05 268 / 0.6);
-  --ring: oklch(0.62 0.22 268);
+  --border: oklch(0.9 0.008 220);
+  --input: oklch(0.9 0.008 220);
+  --ring: oklch(0.74 0.14 200);
 
   /* gradients & shadows */
-  --gradient-hero: radial-gradient(1200px 600px at 20% 10%, oklch(0.42 0.18 270 / 0.55), transparent 60%),
-                   radial-gradient(900px 500px at 85% 30%, oklch(0.55 0.22 280 / 0.35), transparent 60%),
-                   linear-gradient(180deg, oklch(0.14 0.04 270), oklch(0.18 0.045 268));
-  --gradient-primary: linear-gradient(135deg, oklch(0.62 0.22 268), oklch(0.55 0.22 290));
-  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.14 88), oklch(0.72 0.13 70));
-  --shadow-glow: 0 30px 80px -30px oklch(0.55 0.22 280 / 0.55);
-  --shadow-card: 0 20px 50px -20px oklch(0.10 0.04 270 / 0.7);
+  --gradient-hero: radial-gradient(1100px 520px at 12% 0%, oklch(0.92 0.07 200 / 0.55), transparent 60%),
+                   radial-gradient(900px 500px at 90% 20%, oklch(0.95 0.04 220 / 0.7), transparent 60%),
+                   linear-gradient(180deg, oklch(1 0 0), oklch(0.985 0.005 220));
+  --gradient-primary: linear-gradient(135deg, oklch(0.16 0.01 240), oklch(0.28 0.02 220));
+  --gradient-cyan: linear-gradient(135deg, oklch(0.82 0.13 200), oklch(0.62 0.16 215));
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.13 200), oklch(0.62 0.16 215));
+  --shadow-glow: 0 24px 60px -24px oklch(0.62 0.16 215 / 0.45);
+  --shadow-card: 0 14px 40px -18px oklch(0.16 0.01 240 / 0.18);
 }
 
 .dark { color-scheme: dark; }
