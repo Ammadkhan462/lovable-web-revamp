@@ -30,22 +30,26 @@ function Home() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 hero-bg" />
-        <ParticleField />
-        <div className="absolute inset-0 opacity-[0.35] grid-noise" />
+        {/* Full landscape hero image */}
         <motion.img
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.18, scale: 1 }}
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           src={heroImg}
-          alt=""
-          width={1600}
-          height={1100}
-          className="pointer-events-none absolute right-[-10%] top-[-10%] hidden h-[120%] w-[70%] object-cover mix-blend-multiply lg:block"
+          alt="TechRankers creative team collaborating in studio"
+          width={1920}
+          height={1080}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
+        {/* Tint + gradient overlays for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-transparent" />
+        <ParticleField />
+        <div className="absolute inset-0 opacity-[0.18] grid-noise" />
         {/* drifting blobs */}
-        <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-blob" />
-        <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-full bg-accent/25 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
+        <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-accent/30 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
+
 
         <div className="container-x relative grid gap-12 py-24 md:py-32 lg:grid-cols-12">
           <div className="lg:col-span-7">
