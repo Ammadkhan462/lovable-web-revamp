@@ -35,13 +35,13 @@ function Home() {
         <div className="absolute inset-0 opacity-[0.35] grid-noise" />
         <motion.img
           initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.5, scale: 1 }}
+          animate={{ opacity: 0.18, scale: 1 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           src={heroImg}
           alt=""
           width={1600}
           height={1100}
-          className="pointer-events-none absolute right-[-10%] top-[-10%] hidden h-[120%] w-[70%] object-cover mix-blend-screen lg:block"
+          className="pointer-events-none absolute right-[-10%] top-[-10%] hidden h-[120%] w-[70%] object-cover mix-blend-multiply lg:block"
         />
         {/* drifting blobs */}
         <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-blob" />
