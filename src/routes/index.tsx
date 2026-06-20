@@ -182,6 +182,34 @@ function Home() {
 
       </section>
 
+      {/* RESULTS BAND with marketing imagery */}
+      <section className="container-x pb-24">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+          <Reveal>
+            <motion.div whileHover={{ scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }} className="group relative h-full min-h-[360px] overflow-hidden rounded-3xl border border-border">
+              <img src={marketing1} alt="Marketing analytics dashboard" loading="lazy" width={1280} height={900} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-primary-foreground">
+                <span className="text-xs font-semibold uppercase tracking-widest text-accent">Data-driven</span>
+                <h3 className="mt-2 font-display text-3xl font-semibold">Dashboards that turn signal into strategy.</h3>
+              </div>
+            </motion.div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <motion.div whileHover={{ scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }} className="group relative h-full min-h-[360px] overflow-hidden rounded-3xl border border-border">
+              <img src={marketing2} alt="Creative team strategy session" loading="lazy" width={1280} height={900} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-primary-foreground">
+                <span className="text-xs font-semibold uppercase tracking-widest text-accent">Senior team</span>
+                <h3 className="mt-2 font-display text-3xl font-semibold">Strategists, designers, and engineers — together.</h3>
+              </div>
+            </motion.div>
+          </Reveal>
+        </div>
+      </section>
+
+
+
       {/* PROCESS */}
       <section className="relative overflow-hidden border-y border-border bg-surface/40">
         <div className="container-x py-24">
