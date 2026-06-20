@@ -108,14 +108,14 @@ function Home() {
               </div>
               <StaggerGroup className="mt-6 grid grid-cols-2 gap-4">
                 {[
-                  { k: "+312%", v: "organic traffic" },
-                  { k: "2.4×", v: "conversion lift" },
-                  { k: "<1.2s", v: "load time (LCP)" },
-                  { k: "98", v: "Lighthouse score" },
+                  { node: <><CountUp value={312} prefix="+" suffix="%" /></>, v: "organic traffic" },
+                  { node: <><CountUp value={2.4} decimals={1} suffix="×" /></>, v: "conversion lift" },
+                  { node: <><span className="text-muted-foreground">&lt;</span><CountUp value={1.2} decimals={1} suffix="s" /></>, v: "load time (LCP)" },
+                  { node: <CountUp value={98} />, v: "Lighthouse score" },
                 ].map((m) => (
                   <StaggerItem key={m.v}>
                     <div className="rounded-xl border border-border bg-surface p-4">
-                      <div className="font-display text-2xl font-semibold text-foreground">{m.k}</div>
+                      <div className="font-display text-2xl font-semibold text-foreground">{m.node}</div>
                       <div className="mt-1 text-xs text-muted-foreground">{m.v}</div>
                     </div>
                   </StaggerItem>
