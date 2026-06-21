@@ -272,10 +272,12 @@ function Home() {
                   Tell us about your goals. We'll come back with a sharp, no-fluff plan within two business days.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)]">
-                    Start a project <ArrowRight className="h-4 w-4" />
+                  <Link to="/contact" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-[1.04] hover:bg-accent hover:text-accent-foreground">
+                    <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                    <span className="relative">Start a project</span>
+                    <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
-                  <Link to="/work" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-semibold backdrop-blur">
+                  <Link to="/work" className="inline-flex items-center gap-2 rounded-full border-2 border-primary bg-background px-7 py-3.5 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground">
                     Browse case studies
                   </Link>
                 </div>
