@@ -108,10 +108,16 @@ function Home() {
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5"
           >
-            <div className="card-elevated relative rounded-2xl p-6 animate-float">
+            <motion.div
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="card-elevated relative rounded-2xl p-6 animate-float cursor-default shadow-[0_0_0_0_transparent] hover:shadow-[0_0_40px_-10px_oklch(0.72_0.18_210/0.35)] transition-shadow duration-500"
+            >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-widest text-gold">Performance snapshot</span>
-                <Zap className="h-4 w-4 text-gold" />
+                <motion.div whileHover={{ rotate: 12, scale: 1.2 }} transition={{ type: "spring", stiffness: 400 }}>
+                  <Zap className="h-4 w-4 text-gold" />
+                </motion.div>
               </div>
               <StaggerGroup className="mt-6 grid grid-cols-2 gap-4">
                 {[
@@ -121,20 +127,28 @@ function Home() {
                   { node: <CountUp value={98} />, v: "Lighthouse score" },
                 ].map((m) => (
                   <StaggerItem key={m.v}>
-                    <div className="rounded-xl border border-border bg-surface p-4">
+                    <motion.div
+                      whileHover={{ y: -4, scale: 1.03 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                      className="rounded-xl border border-border bg-surface p-4 cursor-default hover:border-accent/50 hover:bg-surface/80 transition-colors duration-300"
+                    >
                       <div className="font-display text-2xl font-semibold text-foreground">{m.node}</div>
                       <div className="mt-1 text-xs text-muted-foreground">{m.v}</div>
-                    </div>
+                    </motion.div>
                   </StaggerItem>
                 ))}
               </StaggerGroup>
-              <div className="mt-6 rounded-xl border border-border bg-surface/60 p-4 text-sm">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="mt-6 rounded-xl border border-border bg-surface/60 p-4 text-sm hover:border-accent/30 transition-colors duration-300"
+              >
                 <p className="text-muted-foreground">"TechRankers rebuilt our funnel end-to-end. We doubled qualified leads in one quarter."</p>
                 <p className="mt-3 text-xs font-semibold text-foreground">— Maya R., VP Growth</p>
-              </div>
+              </motion.div>
               {/* spinning ring decoration */}
               <div className="pointer-events-none absolute -right-6 -top-6 h-16 w-16 rounded-full border border-dashed border-gold/40 animate-spin-slow" />
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
