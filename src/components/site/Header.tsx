@@ -27,8 +27,14 @@ export function Header() {
         <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex">
-          <Link to="/" className="rounded-md px-3 py-2 text-sm text-muted-foreground transition hover:text-foreground" activeProps={{ className: "text-foreground" }} activeOptions={{ exact: true }}>
-            Home
+          <Link
+            to="/"
+            className="group relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+            activeProps={{ className: "text-foreground" }}
+            activeOptions={{ exact: true }}
+          >
+            <span className="relative z-10">Home</span>
+            <span className="pointer-events-none absolute inset-x-3 -bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
           </Link>
 
           {/* Services hover dropdown */}
