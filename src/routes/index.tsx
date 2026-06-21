@@ -223,17 +223,33 @@ function Home() {
             </Reveal>
             <StaggerGroup className="lg:col-span-8 grid gap-4 sm:grid-cols-2">
               {[
-                { n: "01", t: "Discover", d: "Stakeholder interviews, audits, and a clear north-star metric." },
-                { n: "02", t: "Design", d: "Strategy, brand, and prototypes that pressure-test the idea." },
-                { n: "03", t: "Build", d: "Production engineering with weekly demos and tight feedback loops." },
-                { n: "04", t: "Scale", d: "Measure, iterate, and compound wins across every channel." },
+                { n: "01", t: "Discover", d: "Stakeholder interviews, audits, and a clear north-star metric.", b: ["Goals & KPI alignment", "Tech & content audits", "Competitor benchmarks", "Roadmap proposal"] },
+                { n: "02", t: "Design", d: "Strategy, brand, and prototypes that pressure-test the idea.", b: ["Information architecture", "Brand & UI system", "Interactive prototypes", "Stakeholder reviews"] },
+                { n: "03", t: "Build", d: "Production engineering with weekly demos and tight feedback loops.", b: ["Modern tech stack", "Weekly demo cadence", "QA & accessibility", "CI/CD pipelines"] },
+                { n: "04", t: "Scale", d: "Measure, iterate, and compound wins across every channel.", b: ["Analytics dashboards", "A/B experimentation", "Channel expansion", "Quarterly reviews"] },
               ].map((s) => (
                 <StaggerItem key={s.n}>
-                  <motion.div whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 220, damping: 20 }} className="card-elevated rounded-2xl p-6">
-                    <div className="font-display text-gold text-sm font-semibold tracking-widest">{s.n}</div>
-                    <h3 className="mt-3 text-xl font-semibold">{s.t}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
-                  </motion.div>
+                  <div className="group relative h-[210px] [perspective:1400px]">
+                    <div className="relative h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(.2,.8,.2,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(-180deg)]">
+                      <div className="card-elevated absolute inset-0 rounded-2xl p-6 [backface-visibility:hidden]">
+                        <div className="font-display text-accent text-sm font-semibold tracking-widest">{s.n}</div>
+                        <h3 className="mt-3 text-xl font-semibold">{s.t}</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
+                        <div className="absolute bottom-4 right-5 text-[10px] uppercase tracking-widest text-accent/70">Hover →</div>
+                      </div>
+                      <div className="absolute inset-0 overflow-hidden rounded-2xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]" style={{ background: "linear-gradient(135deg, oklch(0.16 0.01 240), oklch(0.30 0.06 215))" }}>
+                        <div className="font-display text-accent text-sm font-semibold tracking-widest">{s.n} · {s.t}</div>
+                        <ul className="mt-3 space-y-1.5">
+                          {s.b.map((x) => (
+                            <li key={x} className="flex items-start gap-2 text-xs text-primary-foreground/90">
+                              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                              {x}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </StaggerItem>
               ))}
             </StaggerGroup>
