@@ -60,26 +60,23 @@ export function Header() {
                           to="/services/$slug"
                           params={{ slug: s.slug }}
                           onClick={() => setServicesOpen(false)}
-                          className="group flex items-start gap-3 rounded-xl p-3 transition hover:bg-surface-elevated"
+                          className="group flex items-center gap-3 rounded-xl p-3 transition hover:bg-surface-elevated"
                         >
-                          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/15 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition">
-                            <Icon className="h-5 w-5" />
+                          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+                            <Icon className="h-4 w-4" />
                           </span>
-                          <span className="min-w-0">
-                            <span className="flex items-center gap-1 text-sm font-semibold text-foreground">
-                              {s.title}
-                              <ArrowUpRight className="h-3.5 w-3.5 text-gold opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" />
-                            </span>
-                            <span className="mt-0.5 line-clamp-2 block text-xs text-muted-foreground">{s.tagline}</span>
+                          <span className="flex-1 text-sm font-semibold text-foreground">
+                            {s.title}
                           </span>
+                          <ArrowUpRight className="h-3.5 w-3.5 text-accent opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" />
                         </Link>
                       );
                     })}
                   </div>
                   <div className="mt-2 flex items-center justify-between rounded-xl bg-surface p-3 text-xs">
-                    <span className="text-muted-foreground">Not sure what you need?</span>
-                    <Link to="/contact" onClick={() => setServicesOpen(false)} className="font-semibold text-gold hover:underline">
-                      Book a free consult →
+                    <span className="text-muted-foreground">See every discipline in one place.</span>
+                    <Link to="/services" onClick={() => setServicesOpen(false)} className="font-semibold text-accent hover:underline">
+                      View all services →
                     </Link>
                   </div>
                 </div>
@@ -88,8 +85,14 @@ export function Header() {
           </div>
 
           {navLinks.slice(1).map((l) => (
-            <Link key={l.to} to={l.to} className="rounded-md px-3 py-2 text-sm text-muted-foreground transition hover:text-foreground" activeProps={{ className: "text-foreground" }}>
-              {l.label}
+            <Link
+              key={l.to}
+              to={l.to}
+              className="group relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+              activeProps={{ className: "text-foreground" }}
+            >
+              <span className="relative z-10">{l.label}</span>
+              <span className="pointer-events-none absolute inset-x-3 -bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
           ))}
         </nav>
@@ -97,9 +100,10 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             to="/contact"
-            className="hidden rounded-full bg-[var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:opacity-95 lg:inline-flex"
+            className="group relative hidden overflow-hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-[1.05] hover:bg-accent hover:text-accent-foreground lg:inline-flex"
           >
-            Start a project
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            <span className="relative">Start a project</span>
           </Link>
           <button
             className="grid h-10 w-10 place-items-center rounded-md border border-border lg:hidden"
