@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
+import { CTABanner } from "@/components/site/CTABanner";
 import { Award, Users, Globe2, Heart } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -66,6 +67,12 @@ function About() {
           ))}
         </div>
       </section>
+
+      <CTABanner
+        eyebrow="Work with us"
+        title="Senior team. Real outcomes."
+        subtitle="If the values above sound like your kind of partner, let's talk about what you're building."
+      />
     </SiteLayout>
   );
 }
