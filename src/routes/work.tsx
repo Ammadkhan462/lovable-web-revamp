@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
+import { CTABanner } from "@/components/site/CTABanner";
 import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/work")({
@@ -55,12 +56,13 @@ function Work() {
           ))}
         </div>
 
-        <div className="mt-14 text-center">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)]">
-            Want results like these? Let's talk →
-          </Link>
-        </div>
       </section>
+
+      <CTABanner
+        eyebrow="Your story, next"
+        title="Want results like these?"
+        subtitle="Let's talk about the outcome you're chasing — and the shortest path to get there."
+      />
     </SiteLayout>
   );
 }

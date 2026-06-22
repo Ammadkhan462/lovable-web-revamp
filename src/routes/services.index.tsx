@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/site/Layout";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Motion";
 import { ParticleField } from "@/components/site/ParticleField";
 import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
+import { CTABanner } from "@/components/site/CTABanner";
 import { services } from "@/data/services";
 import { cn } from "@/lib/utils";
 
@@ -140,6 +141,12 @@ function ServicesIndex() {
           </StaggerGroup>
         )}
       </section>
+
+      <CTABanner
+        eyebrow="One studio, six disciplines"
+        title="Hire us for one, or all of it."
+        subtitle="Tell us where you want to grow — we'll recommend the right mix of services and a path to get there."
+      />
     </SiteLayout>
   );
 }
