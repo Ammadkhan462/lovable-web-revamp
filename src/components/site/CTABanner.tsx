@@ -24,7 +24,8 @@ export function CTABanner({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="relative overflow-hidden rounded-3xl border border-border bg-[var(--gradient-primary)] p-10 md:p-16"
+        className="relative overflow-hidden rounded-3xl border border-primary/40 p-10 md:p-16"
+        style={{ background: "var(--gradient-primary)" }}
       >
         {/* Animated orbs */}
         <motion.div
