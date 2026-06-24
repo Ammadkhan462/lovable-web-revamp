@@ -53,7 +53,7 @@ export function ServiceFlipCard({ s }: { s: Service }) {
 
         {/* BACK */}
         <div
-          className="absolute inset-0 overflow-hidden rounded-2xl border border-foreground/10 p-7 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)]"
+          className="flip-3d-face flip-3d-back overflow-hidden rounded-2xl border border-foreground/10 p-7"
           style={{ background: "linear-gradient(135deg, oklch(0.16 0.01 240), oklch(0.22 0.03 215))" }}
         >
           <div className="grid-noise absolute inset-0 opacity-30" />
