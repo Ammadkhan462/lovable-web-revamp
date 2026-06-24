@@ -50,6 +50,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-transparent" />
         <ParticleField />
         <div className="absolute inset-0 opacity-[0.18] grid-noise" />
+        <Hero3DSphere />
         {/* drifting blobs */}
         <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-accent/30 blur-3xl animate-blob" />
         <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
