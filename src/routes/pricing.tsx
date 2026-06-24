@@ -166,7 +166,7 @@ function Pricing() {
                     <span className="relative">Start a project</span>
                     <ArrowRight className="relative h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </Link>
-                </motion.div>
+                </div>
               </StaggerItem>
             );
           })}
