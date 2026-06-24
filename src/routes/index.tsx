@@ -111,10 +111,9 @@ function Home() {
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5"
           >
-            <motion.div
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="card-elevated relative rounded-2xl p-6 animate-float cursor-default shadow-[0_0_0_0_transparent] hover:shadow-[0_0_40px_-10px_oklch(0.72_0.18_210/0.35)] transition-shadow duration-500"
+            <TiltCard
+              max={10}
+              className="card-elevated relative rounded-2xl p-6 cursor-default transition-shadow duration-500"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-widest text-gold">Performance snapshot</span>
