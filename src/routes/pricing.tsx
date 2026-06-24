@@ -90,11 +90,9 @@ function Pricing() {
             const Icon = p.icon;
             return (
               <StaggerItem key={p.name}>
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                  className={`group card-elevated relative h-full overflow-hidden rounded-3xl p-8 transition-shadow duration-500 hover:shadow-[var(--shadow-glow)] ${
-                    p.featured ? "border-accent/70 ring-2 ring-accent/40" : ""
+                <div
+                  className={`group card-elevated price-3d relative h-full overflow-hidden rounded-3xl p-8 ${
+                    p.featured ? "price-3d-featured border-accent/70 ring-2 ring-accent/40" : ""
                   }`}
                 >
                   {/* hover glow */}
