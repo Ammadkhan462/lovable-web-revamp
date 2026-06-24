@@ -150,7 +150,7 @@ function Home() {
               </motion.div>
               {/* spinning ring decoration */}
               <div className="pointer-events-none absolute -right-6 -top-6 h-16 w-16 rounded-full border border-dashed border-gold/40 animate-spin-slow" />
-            </motion.div>
+            </TiltCard>
           </motion.div>
         </div>
       </section>
