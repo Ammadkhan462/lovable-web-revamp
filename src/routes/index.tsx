@@ -7,6 +7,8 @@ import { ParticleField } from "@/components/site/ParticleField";
 import { services } from "@/data/services";
 import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
 import { CountUp } from "@/components/site/CountUp";
+import { Hero3DSphere } from "@/components/site/Hero3DSphere";
+import { TiltCard } from "@/components/site/TiltCard";
 import heroImg from "@/assets/hero.jpg";
 import marketing1 from "@/assets/marketing-1.jpg";
 import marketing2 from "@/assets/marketing-2.jpg";
