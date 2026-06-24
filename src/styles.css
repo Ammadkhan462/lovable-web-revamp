@@ -175,6 +175,60 @@
 @utility animate-spin-slow { animation: spin-slow 18s linear infinite; }
 @utility animate-pulse-glow { animation: pulse-glow 2.4s ease-out infinite; }
 @utility animate-blob { animation: blob 14s ease-in-out infinite; }
+
+@keyframes float-3d {
+  0%, 100% { transform: translateY(0) translateZ(0); }
+  50% { transform: translateY(-8px) translateZ(10px); }
+}
+@utility animate-float-3d { animation: float-3d 5.5s ease-in-out infinite; }
+
+/* 3D flip card primitives — used by ServiceFlipCard */
+.flip-3d { perspective: 1600px; }
+.flip-3d-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 900ms cubic-bezier(0.34, 1.56, 0.64, 1); /* bounce easing */
+  will-change: transform;
+}
+.flip-3d:hover .flip-3d-inner { transform: rotateY(180deg); }
+.flip-3d-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-3d-back { transform: rotateY(180deg); }
+
+/* Pricing 3D lift */
+.price-3d {
+  transform-style: preserve-3d;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+@media (hover: hover) {
+  .price-3d:hover {
+    transform: perspective(1000px) translateZ(30px) translateY(-10px);
+    box-shadow: 0 40px 90px -20px oklch(0.55 0.22 215 / 0.55),
+                0 20px 50px -25px oklch(0.12 0.02 240 / 0.4);
+  }
+  .price-3d-featured {
+    transform: perspective(1000px) translateZ(18px) translateY(-6px);
+    box-shadow: 0 32px 70px -22px oklch(0.55 0.22 215 / 0.45);
+  }
+  .price-3d-featured:hover {
+    transform: perspective(1000px) translateZ(40px) translateY(-14px);
+  }
+}
+
+/* Disable hover-only 3D on touch devices */
+@media (hover: none) {
+  .flip-3d-inner { transition: none; }
+  .flip-3d:hover .flip-3d-inner { transform: none; }
+  .animate-float-3d { animation: none; }
+}
 @utility shimmer-text {
   background: linear-gradient(90deg, var(--color-foreground) 0%, var(--color-gold) 50%, var(--color-foreground) 100%);
   background-size: 200% 100%;

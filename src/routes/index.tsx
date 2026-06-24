@@ -7,6 +7,8 @@ import { ParticleField } from "@/components/site/ParticleField";
 import { services } from "@/data/services";
 import { ServiceFlipCard } from "@/components/site/ServiceFlipCard";
 import { CountUp } from "@/components/site/CountUp";
+import { Hero3DSphere } from "@/components/site/Hero3DSphere";
+import { TiltCard } from "@/components/site/TiltCard";
 import heroImg from "@/assets/hero.jpg";
 import marketing1 from "@/assets/marketing-1.jpg";
 import marketing2 from "@/assets/marketing-2.jpg";
@@ -48,6 +50,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-transparent" />
         <ParticleField />
         <div className="absolute inset-0 opacity-[0.18] grid-noise" />
+        <Hero3DSphere />
         {/* drifting blobs */}
         <div className="pointer-events-none absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-accent/30 blur-3xl animate-blob" />
         <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
@@ -108,10 +111,9 @@ function Home() {
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5"
           >
-            <motion.div
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="card-elevated relative rounded-2xl p-6 animate-float cursor-default shadow-[0_0_0_0_transparent] hover:shadow-[0_0_40px_-10px_oklch(0.72_0.18_210/0.35)] transition-shadow duration-500"
+            <TiltCard
+              max={10}
+              className="card-elevated relative rounded-2xl p-6 cursor-default transition-shadow duration-500"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-widest text-gold">Performance snapshot</span>
@@ -148,7 +150,7 @@ function Home() {
               </motion.div>
               {/* spinning ring decoration */}
               <div className="pointer-events-none absolute -right-6 -top-6 h-16 w-16 rounded-full border border-dashed border-gold/40 animate-spin-slow" />
-            </motion.div>
+            </TiltCard>
           </motion.div>
         </div>
       </section>

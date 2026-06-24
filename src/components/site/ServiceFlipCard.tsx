@@ -9,16 +9,16 @@ export function ServiceFlipCard({ s }: { s: Service }) {
   const Icon = iconMap[s.icon as keyof typeof iconMap];
 
   return (
-    <div className="flip-card group relative h-[340px] w-full [perspective:1600px]">
+    <div className="flip-card flip-3d group relative h-[340px] w-full animate-float-3d">
       {/* Glow halo */}
       <div
         className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-60"
         style={{ background: "var(--gradient-primary)" }}
       />
 
-      <div className="relative h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(.2,.8,.2,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(-180deg)]">
+      <div className="flip-3d-inner">
         {/* FRONT */}
-        <div className="card-elevated absolute inset-0 overflow-hidden rounded-2xl p-7 [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
+        <div className="flip-3d-face card-elevated overflow-hidden rounded-2xl p-7">
           {/* shine sweep */}
           <div className="pointer-events-none absolute -inset-y-10 -left-1/2 w-1/2 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-all duration-700 group-hover:left-[110%] group-hover:opacity-100" />
 
@@ -53,7 +53,7 @@ export function ServiceFlipCard({ s }: { s: Service }) {
 
         {/* BACK */}
         <div
-          className="absolute inset-0 overflow-hidden rounded-2xl border border-foreground/10 p-7 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)]"
+          className="flip-3d-face flip-3d-back overflow-hidden rounded-2xl border border-foreground/10 p-7"
           style={{ background: "linear-gradient(135deg, oklch(0.16 0.01 240), oklch(0.22 0.03 215))" }}
         >
           <div className="grid-noise absolute inset-0 opacity-30" />
