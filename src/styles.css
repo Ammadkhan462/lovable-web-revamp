@@ -237,3 +237,21 @@
   color: transparent;
   animation: shimmer 6s linear infinite;
 }
+
+/* Custom magnetic cursor */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+.cursor-ring {
+  transition: border-color 200ms ease, background-color 200ms ease, width 200ms ease, height 200ms ease;
+}
+.cursor-ring--hover {
+  border-color: oklch(0.85 0.15 200 / 0.9);
+  background-color: oklch(0.72 0.18 210 / 0.12);
+}
+.cursor-ring--down {
+  background-color: oklch(0.72 0.18 210 / 0.25);
+}

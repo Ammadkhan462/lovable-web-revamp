@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { MagneticCursor } from "@/components/site/MagneticCursor";
+import { StickyCTABar } from "@/components/site/StickyCTABar";
 
 function NotFoundComponent() {
   return (
@@ -117,8 +119,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <MagneticCursor />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <StickyCTABar />
     </QueryClientProvider>
   );
 }
